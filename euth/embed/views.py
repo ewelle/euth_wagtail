@@ -4,4 +4,6 @@ from django.views.decorators.clickjacking import xframe_options_exempt
 
 @xframe_options_exempt
 def test_view(request):
-    return HttpResponse("This page is safe to load in a frame on any site.")
+    text = '<script src="static/embed.js" type="text/javascript"></script>\
+        <body>I\'m inside my body.</body>'
+    return HttpResponse(text)
