@@ -16,6 +16,7 @@ from euth.comments.api import CommentViewSet
 from euth.dashboard import urls as dashboard_urls
 from euth.documents import urls as paragraph_urls
 from euth.documents.api import DocumentViewSet
+from euth.embed import urls as embed_urls
 from euth.follows.api import FollowViewSet
 from euth.ideas import urls as ideas_urls
 from euth.memberships import urls as memberships_urls
@@ -49,6 +50,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     url(r'^dashboard/', include(dashboard_urls)),
+    url(r'^embed/', include(embed_urls)),
     url(r'^profile/', include(user_urls)),
     url(r'^orgs/', include(organisations_urls)),
     url(r'^projects/', include(projects_urls)),
